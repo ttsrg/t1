@@ -1,0 +1,52 @@
+import java.util.Arrays;
+
+public class Task31 {
+    public static void main(String[] args) {
+
+
+        int array[] = {5, 0, -1, 99, 105, 348, 14, 9, 555, 0};
+        int n = 10;
+        int max = array[0];
+        int min = array[0];
+
+        for (int i = 0; i < n; i++) {
+            if (max < array[i]) {
+                max = array[i];
+            }
+            if (min > array[i]) {
+                min = array[i];
+            }
+        }
+        System.out.println("min value=" + min);
+        System.out.println("max value=" + max);
+
+
+        int[] changedArray = new int[n];
+        for (int i = 0; i < n; i++) {
+            if (array[i] == max) {
+                changedArray[i] = 9999;
+            } else {
+                changedArray[i] = array[i];
+            }
+            if (array[i] == min) {
+                changedArray[i] = 0;
+            } else {
+                changedArray[i] = array[i];
+            }
+        }
+
+        System.out.println("\nchangedArray:");
+        //for (int i = 0; i < n; i++) {
+        //System.out.print(" " + changedArray[i]);
+        System.out.print(Arrays.toString(changedArray));
+        //}
+
+
+/*1. Создайте массив с 10-ю переменными целочисленного типа. Используя оператор "for", найдите и выведите на экран наименьшее и наибольшее значение в массиве.
+            min value =  "значение которое у вас получилось".
+            max value =  "значение которое у вас получилось".
+    Далее замените наименьшее значение на 0, а наибольшее значение на 99 и выведите получившийся массив на экран в виде:
+            [23, 0, 34, 99, 43534].*/
+
+    }
+}
